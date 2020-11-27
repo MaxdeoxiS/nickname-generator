@@ -5,7 +5,7 @@ Combine words to create a unique nickname.
 Inspired by Xbox Live Gamertag's generator.
 
 ## Install
-You can install it through NPM:
+You can install it through [NPM](https://www.npmjs.com/package/nickname-generator):
 
 ```sh
 npm install nickname-generator
