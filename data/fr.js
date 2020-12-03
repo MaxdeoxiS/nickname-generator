@@ -1,6 +1,6 @@
 const fruits = ['Banane', 'Fraise', 'Orange', 'Pomme', 'Raisin', 'Framboise', 'Clémentine', 'Ananas', 'Kiwi', 'Abricot', 'Pêche', 'Mangue', 'Poire', 'Pamplemousse', 'Groseille', 'Citron', 'Cerise'];
 const animals = ['Chèvre', 'Chaton', 'Chien', 'Dragon', 'Renard', 'Crocodile', 'Lion', 'Tigre', 'Mygale', 'Rhinocéros', 'Ptérodactyle', 'Furet', 'Tortue', 'Dauphin', 'Aigle', 'Faucon', 'Girafe'];
-const flowers = ['Lila', 'Rose', 'Tulipe', 'Jacynthe', 'Tournesol', 'Jonquille', 'Lavande', 'Marguerite', 'Orchidée', 'Lys', 'Muguet', 'Violette', 'Jasmin', 'Coquelicot', 'Pâquerette', 'Pensée'];
+const flowers = ['Lilas', 'Rose', 'Tulipe', 'Jacinthe', 'Tournesol', 'Jonquille', 'Lavande', 'Marguerite', 'Orchidée', 'Lys', 'Muguet', 'Violette', 'Jasmin', 'Coquelicot', 'Pâquerette', 'Pensée'];
 const instruments = ['Piano', 'Guitare', 'Accordéon', 'Harmonica', 'Violon', 'Orgue', 'Basse', 'Saxophone', 'Tambour', 'Harpe', 'Mandoline', 'Banjo', 'Trombone', 'Trompette'];
 const objects = ['Chaise', 'Bureau', 'Table', 'Écran', 'Caméra', 'Assiette', 'Cuillère', 'Fourchette', 'Couteau', 'Lit', 'Couverture', 'Lavabo', 'Peluche', 'Coussin'];
 const clothes = ['Montre', 'Cravate', 'Capuche', 'Ceinture', 'Bracelet', 'Collier', 'Chapeau', 'Casquette', 'Chaussure', 'Masque', 'Lunette', 'Tatouage', 'Débardeur', 'Jupe', 'Robe', 'Costume'];
