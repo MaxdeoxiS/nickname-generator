@@ -6,5 +6,12 @@ const locales = {
 
 const dataPath = './data/';
 
+const wordCases = {
+    camelCase: 'camelCase',
+    hungarian: 'hungarian',
+    upper: 'upper',
+    lower: 'lower'
+}
 
-module.exports = { locales, dataPath };
+
+module.exports = { locales, dataPath, wordCases };

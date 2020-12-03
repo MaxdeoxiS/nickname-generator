@@ -9,15 +9,22 @@ const defaultConfig = {
   // Number of words to combine
   numberOfWords: 2,
   // The language to use for the words. Only supports English ('en') and French ('fr')
-  locale: constants.locales.en
+  locale: constants.locales.en,
+  // Separator between words
+  separator: '',
+  // Case to use
+  wordCase: constants.wordCases.camelCase
 }
 
 /**
  * Create a random nickname.
- * @param config Parameters for the nickname generation.
- * @param config.includes The categories of words to include. Null or empty will include everything.
- * @param config.suffixLength The number of digits appended at the end.
- * @param config.numberOfWords The number of words to combine.
+ * @param {Object} config Parameters for the nickname generation.
+ * @param {Array.<string>} config.includes The categories of words to include. Null or empty will include everything.
+ * @param {number} config.suffixLength The number of digits appended at the end.
+ * @param {number} config.numberOfWords The number of words to combine.
+ * @param {string} config.locale The locale to use.
+ * @param {string} config.separator The separator between words.
+ * @param {string} config.wordCase The case to use for words.
  * @return {string} A randomly generated nickname.
  */
 exports.randomNickname = (config = defaultConfig) => {
@@ -35,8 +42,10 @@ exports.randomNickname = (config = defaultConfig) => {
 
   const includeAll = !config.includes || config.includes.length === 0;
   const selectedCategories = includeAll ? allCategories : config.includes;
-  const nbOfWords = config.numberOfWords ? config.numberOfWords : defaultConfig.numberOfWords;
-  const nbOfDigits = config.suffixLength ? config.suffixLength : defaultConfig.suffixLength;
+  const nbOfWords = (typeof config.numberOfWords === 'number') ? config.numberOfWords : defaultConfig.numberOfWords;
+  const nbOfDigits = (typeof config.suffixLength === 'number') ? config.suffixLength : defaultConfig.suffixLength;
+  const separator = config.separator ? config.separator : defaultConfig.separator;
+  const wordCase = config.wordCase ? config.wordCase : defaultConfig.wordCase;
 
   let availableCategories = allCategories.filter(cat => selectedCategories.includes(cat));
 
@@ -50,10 +59,11 @@ exports.randomNickname = (config = defaultConfig) => {
     }
     const randomCategory = utils.getRandomElement(availableCategories);
     const randomWord = utils.getRandomElement(data[randomCategory]);
+    const formattedWord = utils.format(randomWord, wordCase, i);
     // Remove current word's category for next iterations
     availableCategories = availableCategories.filter(cat => cat !== randomCategory);
 
-    combinedWords += randomWord;
+    combinedWords += (i === 0 ? '' : separator) + formattedWord;
   }
 
   // Generate random number
@@ -67,6 +77,3 @@ exports.randomNickname = (config = defaultConfig) => {
   console.log(nickname);
   return nickname;
 }
-
-require('./index.js').randomNickname({ locale: 'fr' })
-
