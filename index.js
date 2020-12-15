@@ -74,6 +74,5 @@ exports.randomNickname = (config = defaultConfig) => {
 
   const nickname = combinedWords + suffix;
 
-  console.log(nickname);
   return nickname;
 }
